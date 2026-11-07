@@ -1,9 +1,9 @@
 cask "pinky" do
   arch arm: "arm64", intel: "amd64"
 
-  version "2026.1107.9"
-  sha256 arm:   "1540b46dbb59e4102a19ef32cefef18cc6c30ed7a6608b659aca6fb6ab3ee8fc",
-         intel: "4ea42ffbba291d49bde8e227bb8c41acd1627da3b82a43a94745c169d1164786"
+  version "2026.1108.1"
+  sha256 arm:   "854b3f350eff0a613af97df541270101234b6cadfdd9cba3c2cb96b8e27cd504",
+         intel: "d49667aefd872225da0a4854b54d98ecc9d273cf3c98308b7befea4a683be821"
 
   url "https://github.com/DIYgod/pinky/releases/download/v#{version}/pinky-#{version}-darwin-#{arch}.zip"
   name "Pinky"
@@ -19,7 +19,7 @@ cask "pinky" do
   depends_on macos: :monterey
 
   app "Pinky.app"
-  command_wrapper "pinky",
+  command_wrapper "pinkyctl",
                   executable: "#{appdir}/Pinky.app/Contents/MacOS/Pinky"
 
   uninstall quit: "app.pinky.desktop"
@@ -32,4 +32,11 @@ cask "pinky" do
     "~/Library/Preferences/app.pinky.desktop.plist",
     "~/Library/Saved Application State/app.pinky.desktop.savedState",
   ]
+
+  caveats <<~EOS
+    Agents start Pinky with: pinkyctl mcp
+      claude mcp add pinky -- pinkyctl mcp
+    The command was named pinky before, a name coreutils has too: change
+    agents that run "pinky mcp" to run "pinkyctl mcp".
+  EOS
 end
