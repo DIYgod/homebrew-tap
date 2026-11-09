@@ -1,9 +1,9 @@
 cask "pinky" do
   arch arm: "arm64", intel: "amd64"
 
-  version "2026.1109.9"
-  sha256 arm:   "8198f50922e537f55511816eea10e534e3d559be357f6a668dc4dc5b5613dcfb",
-         intel: "e39467f75fe88234086674189ed873bfaa7119f69a5049f23c0970cd5911d3fd"
+  version "2026.1109.10"
+  sha256 arm:   "d47b6336d883a0a253b5e5f2915d6ddd2ac794f37b19a6485aef88794b00c155",
+         intel: "e2e2e2f72f9c35c5d692a3293e8825adf5c622175d23f3ef90619701ec706acc"
 
   url "https://github.com/DIYgod/pinky/releases/download/v#{version}/pinky-#{version}-darwin-#{arch}.zip"
   name "Pinky"
@@ -16,7 +16,7 @@ cask "pinky" do
   end
 
   auto_updates true
-  depends_on macos: :monterey
+  depends_on macos: :ventura
 
   app "Pinky.app"
   command_wrapper "pinkyctl",
