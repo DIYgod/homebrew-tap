@@ -1,9 +1,9 @@
 cask "pinky" do
   arch arm: "arm64", intel: "amd64"
 
-  version "2026.1110.13"
-  sha256 arm:   "5fa9566d1be34dde2b737c83399407254536b54352225fbdd151d906a2b6d4b2",
-         intel: "8586d285d7f20beb3f3c68e6a3a754906688e40fc6f16f9524c228ba257fc206"
+  version "2026.1110.14"
+  sha256 arm:   "9d86ed84e9cff455ed18ebd5ea25c162818bd8f1d03c769b5707c1d30cd39d0d",
+         intel: "44ee7bad7720580f57e587c4887b5d99f8fa1db99a4c375af69a6ee6f83209b0"
 
   url "https://github.com/DIYgod/pinky/releases/download/v#{version}/pinky-#{version}-darwin-#{arch}.zip"
   name "Pinky"
